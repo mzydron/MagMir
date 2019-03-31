@@ -1,0 +1,23 @@
+MagicElon
+
+Simple MagicMirror software written in (for now) in python.
+
+As part of my learning process I'm using RaspberryPi and python to make fully functional MagicMirror. This file will be updated as my project will grow.
+
+As for project made after work, development Can be slow and not always very pretty - yet I'm trying to do my best;
+
+Current funcionalities:
+
+    Fullscreen clock
+    Current temperature based on your location (Needs proper configuration)
+
+For config you need API key put into apiKey.py file
+
+Development process and plans for future integration :
+
+Important work to be done:
+
+    reconfiguration of geometry for easier implementation of new visual widgets
+    little diod to check if weather data/ news feed is recent.
+
+F. Add speech recognition (possibly gtts module) to allow voice manipulation F. Twitter client for news scrapping
