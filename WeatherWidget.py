@@ -43,13 +43,25 @@ class ApiCaller:
         # checkIfUpdated()
         with open("responseInJson.txt", "r") as jsonData:
             self.jsonData = json.load(jsonData)
-        return self.jsonData['list'][0]['main']["temp"]
+        try:
+            return self.jsonData['list'][0]['main']["temp"]
+        except KeyError as k:
+            print("Check your ApiKey file for proper configuration")
+        finally:
+            return "Error"
+
 
     def getFutureTemp(self, numbersof3hrs):
         # Takes as argument number of future forecast each number increase 3 hrs i.e. numebersof3hrs = 2 is equal 6 hrs
         with open("responseInJson.txt", "r") as jsonData:
             self.jsonData = json.load(jsonData)
-        return self.jsonData['list'][numbersof3hrs]['main']["temp"]
+            try:
+                return self.jsonData['list'][numbersof3hrs]['main']["temp"]
+            except KeyError as k:
+                print("Check your ApiKey file for proper configuration")
+            finally:
+                return "Error"
+
 
 
     def getIconCode(self):

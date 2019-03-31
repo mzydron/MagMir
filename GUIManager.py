@@ -64,14 +64,13 @@ class WeatherIcon(tk.Frame):
         def weatherIcon():
             try:
                 iconName = Utilities.weatherApi.getIconCode()
-                if not iconName:
-                    iconName = "default.gif"
-
-                self.weatherIcon = tk.PhotoImage(file=iconName)
-                tk.Label(self, image=self.weatherIcon, borderwidth=0).pack()
 
             except Exception as e:
                 print("No suitable icon for : {}".format(e))
+                iconName = "default.gif"
+            finally:
+                self.weatherIcon = tk.PhotoImage(file=iconName)
+                tk.Label(self, image=self.weatherIcon, borderwidth=0).pack()
 
         weatherIcon()
 
