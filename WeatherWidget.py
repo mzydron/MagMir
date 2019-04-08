@@ -47,7 +47,6 @@ class ApiCaller:
             return self.jsonData['list'][0]['main']["temp"]
         except KeyError as k:
             print("Check your ApiKey file for proper configuration")
-        finally:
             return "Error"
 
 
@@ -59,7 +58,6 @@ class ApiCaller:
                 return self.jsonData['list'][numbersof3hrs]['main']["temp"]
             except KeyError as k:
                 print("Check your ApiKey file for proper configuration")
-            finally:
                 return "Error"
 
 
